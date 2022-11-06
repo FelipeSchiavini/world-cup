@@ -34,7 +34,6 @@ export const AppRoutes = () => {
         }}>
             <Screen 
                 name = "new"
-
                 component={New}
                 options={{
                     tabBarIcon: ({color}) => <PlusCircle color={color} size={size}/>,

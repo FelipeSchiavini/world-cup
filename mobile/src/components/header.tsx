@@ -12,7 +12,6 @@ interface Props {
 
 export function Header({ title, showBackButton = false, showShareButton = false, onShare}: Props) {
   const navigation = useNavigation();
-  const popAction = StackActions.pop(1);
 
   const EmptyBoxSpace = () => (<Box w={6} h={6} />);
 
@@ -21,7 +20,7 @@ export function Header({ title, showBackButton = false, showShareButton = false,
       <HStack w="full" alignItems="center" justifyContent="space-between">
         {
           showBackButton
-            ? <ButtonIcon icon={CaretLeft} onPress={()=>{navigation.dispatch(popAction)}} />
+            ? <ButtonIcon icon={CaretLeft} onPress={()=>{navigation.navigate('pools')}} />
             : <EmptyBoxSpace />
         }
 

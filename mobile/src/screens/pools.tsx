@@ -11,8 +11,8 @@ import { PoolCard, PoolCardProps } from '../components/pool-card';
 import { api } from '../services/api';
 
 export const Pools = () => {
-    const navigation = useNavigation();
     const toast = useToast()
+    const navigation = useNavigation();
     const [pools, setPools] = useState<PoolCardProps[]>([])
     const [isLoading, setIsLoading] = useState<Boolean>(true)
     const fetchPools = async () => {
@@ -49,7 +49,7 @@ export const Pools = () => {
             <Header title="Meus bolões"/>
 
             <VStack mt={6} mx={5} borderBottomWidth={1} borderBottomColor="gray.600" pb={4} mb={4}>
-            <Button title="BUSCAR BOLÃO POR CÓDIGO" leftIcon={<Icon as={Octicons} name="search" color="black" size="md" onPress={()=>navigation.navigate('pools')}/>} />
+            <Button title="BUSCAR BOLÃO POR CÓDIGO" onPress={()=>navigation.navigate('find')} leftIcon={<Icon as={Octicons} name="search" color="black" size="md"/>} />
             </VStack>
             {isLoading ? <Loading/> :
             <FlatList
